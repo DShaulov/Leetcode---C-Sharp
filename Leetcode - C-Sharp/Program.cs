@@ -6,10 +6,11 @@ public class Program
 {
     static void Main()
     {
-        SearchInsertSolution sol = new SearchInsertSolution();
-        int[] nums = { 1, 3, 5, 6 };
-        Console.WriteLine(sol.SearchInsert(nums, 5));
-        Console.WriteLine(sol.SearchInsert(nums, 2));
-        Console.WriteLine(sol.SearchInsert(nums, 7));
+        MergeSortedArraySolution sol = new MergeSortedArraySolution();
+        int[] nums1 = { 1, 2, 3, 0, 0, 0 };
+        int m = 3;
+        int[] nums2 = { 2, 5, 6 };
+        int n = 3;
+        sol.Merge(nums1, m, nums2, n);
     }
 }
