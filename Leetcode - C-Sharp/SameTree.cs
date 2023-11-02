@@ -23,7 +23,7 @@ namespace Leetcode___C_Sharp
             {
                 return false;
             }
-            
+            return false;
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Leetcode___C_Sharp
             public int val;
             public TreeNode left;
             public TreeNode right;
-            public TreeNode(int val=0, TreeNode left, TreeNode right)
+            public TreeNode(TreeNode left, TreeNode right, int val=0)
             {
                 this.val = val;
                 this.left = left;
