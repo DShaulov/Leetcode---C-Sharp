@@ -8,24 +8,32 @@ namespace Leetcode___C_Sharp
 {
     public class CombinationsSolution
     {
+        /*
+         *  n = 5, k = 2
+         *  all combinations of 2 numbers from [1, 2, 3, 4, 5] - > [1,2], [1,3], ...
+         */
+
+
         public IList<IList<int>> Combine(int n, int k)
         {
-            return CombineRecursive(n, k, new List<int>(), 1);
-        }
-        public IList<IList<int>> CombineRecursive(int n, int k, IList<int> current, int iteration)
-        {
-            if (k == 0)
+            IList<IList<int>> result = new List<IList<int>>();    
+            IList<int> current = new List<int>();
+            void DFS(int index)
             {
-                return new List<IList<int>> { current };
+                if (current.Count == k)
+                {
+                    result.Add(new List<int>(current));
+                    return;
+                }
+                for (int i = index; i < n + 1; i++)
+                {
+                    current.Add(i);
+                    DFS(index + i);
+                    current.RemoveAt(current.Count - 1);
+                }
             }
-            List<IList<int>> allLists = new List<IList<int>>();
-            for (int i = iteration; i <= n; i++)
-            {
-                List<int> newList = new List<int>(current);
-                newList.Add(i);
-                allLists.AddRange(CombineRecursive(n, k-1, newList, iteration + 1));
-            }
-            return allLists;
+            DFS(1);
+            return result;
         }
     }
 }
