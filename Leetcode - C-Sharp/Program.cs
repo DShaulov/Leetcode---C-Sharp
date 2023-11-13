@@ -6,8 +6,8 @@ public class Program
 {
     static void Main()
     {
-        CanJumpSolution sol = new CanJumpSolution();
-        int[] nums = { 2, 3, 1, 1, 4};
-        sol.CanJump(nums);
+        IsBalancedSolution sol = new IsBalancedSolution();
+        TreeNode root = new TreeNode(new TreeNode(null, null, 2), null, 1);
+        sol.IsBalanced(root);
     }
 }
