@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Leetcode___C_Sharp
 {
+    public class TreeNode
+    {
+        public int val;
+        public TreeNode left;
+        public TreeNode right;
+        public TreeNode(TreeNode left, TreeNode right, int val = 0)
+        {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
     public class SymmetricTreeSolution
     {
-        public class TreeNode
-        {
-            public int val;
-            public TreeNode left;
-            public TreeNode right;
-            public TreeNode(TreeNode left, TreeNode right, int val=0)
-            {
-                this.val = val;
-                this.left = left;
-                this.right = right;
-            }
-        }
         public bool IsSymmetric(TreeNode root)
         {
             if (root.left == null && root.right == null)

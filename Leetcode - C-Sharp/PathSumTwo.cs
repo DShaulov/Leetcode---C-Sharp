@@ -21,14 +21,26 @@ namespace Leetcode___C_Sharp
                 {
                     return;
                 }
-                else if (sum == targetSum && root.right == null && root.left == null)
+                else if (sum + root.val == targetSum && root.right == null && root.left == null)
                 {
+                    path.Add(root.val);
                     result.Add(new List<int>(path));
+                    path.RemoveAt(path.Count - 1);
                     return;
                 }
-                else if (sum > targetSum)
+                else if (targetSum < 0)
                 {
-                    return;
+                    if (sum < targetSum)
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    if (targetSum < sum)
+                    {
+                        return;
+                    }
                 }
                 path.Add(root.val);
                 sum += root.val;
