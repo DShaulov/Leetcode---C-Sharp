@@ -6,8 +6,13 @@ public class Program
 {
     static void Main()
     {
-        IsBalancedSolution sol = new IsBalancedSolution();
-        TreeNode root = new TreeNode(new TreeNode(null, null, 2), null, 1);
-        sol.IsBalanced(root);
+        NumIslandsSolution sol = new NumIslandsSolution();
+        char[][] grid = new char[3][];
+        grid[0] = new char[] { '0', '1', '0' };
+        grid[1] = new char[] { '1', '0', '1' };
+        grid[2] = new char[] { '0', '1', '0' };
+        sol.NumIslands(grid);
+
+
     }
 }
