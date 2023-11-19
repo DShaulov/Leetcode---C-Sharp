@@ -10,15 +10,15 @@ namespace Leetcode___C_Sharp
     {
         public bool SearchMatrix(int[][] matrix, int target)
         {
-            if (target < matrix[0][0] || matrix[matrix.Length][matrix[0].Length] < target)
+            if (target < matrix[0][0] || matrix[matrix.Length - 1][matrix[0].Length - 1] < target)
             {
                 return false;
             }
-            int middleColumn = matrix[0].Length / 2;
-            int middleRow = matrix[matrix.Length - 1].Length / 2;
+            int middleColumn = (matrix[0].Length / 2) - 1;
+            int middleRow = (matrix[matrix.Length - 1].Length / 2) - 1;
             while (true)
             {
-                if (matrix[middleColumn][0] <= target && target <= matrix[middleColumn][matrix[0].Length])
+                if (matrix[middleColumn][0] <= target && target <= matrix[middleColumn][matrix[0].Length - 1])
                 {
                     break;
                 }
@@ -36,7 +36,7 @@ namespace Leetcode___C_Sharp
                 }
             }
             int left = 0;
-            int right = matrix[0].Length;
+            int right = matrix[0].Length - 1;
             while (true)
             {
                 if (target == matrix[middleColumn][middleRow])
@@ -49,11 +49,11 @@ namespace Leetcode___C_Sharp
                 }
                 if (target < matrix[middleColumn][middleRow])
                 {
-                    right = matrix[middleColumn][middleRow];
+                    right = middleRow;
                 }
                 else
                 {
-                    left = matrix[middleColumn][middleRow];
+                    left = middleRow;
                 }
                 middleRow = (left + right) / 2;
 
