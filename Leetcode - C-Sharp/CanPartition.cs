@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Leetcode___C_Sharp
 {
-    public class UniqueBinarySearchTreesSolution
+    public class CanPartitionSolution
     {
-        public int NumTrees(int n)
+        public bool CanPartition(int[] nums)
         {
-
+            return false;
         }
     }
 }

@@ -6,7 +6,8 @@ public class Program
 {
     static void Main()
     {
-        EditDistanceSolution sol= new EditDistanceSolution();
-        sol.MinDistance("horse", "ros");
+        PlusOneSolution sol = new PlusOneSolution();
+        Console.WriteLine(sol.PlusOne(new int[] {1,2,3} ));
+        Console.WriteLine(sol.PlusOne(new int[] {9,9,9}));
     }
 }
