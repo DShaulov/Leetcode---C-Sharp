@@ -6,8 +6,13 @@ public class Program
 {
     static void Main()
     {
-        PlusOneSolution sol = new PlusOneSolution();
-        Console.WriteLine(sol.PlusOne(new int[] {1,2,3} ));
-        Console.WriteLine(sol.PlusOne(new int[] {9,9,9}));
+        WordSearchSolution sol = new WordSearchSolution();
+        char[][] board = new char[3][];
+        board[0] = new char[4] { 'A', 'B', 'C', 'E' };
+        board[1] = new char[4] { 'S', 'F', 'C', 'S' };
+        board[2] = new char[4] { 'A', 'D', 'E', 'E' };
+        string word = "ABCCED";
+        sol.Exist(board, word);
+
     }
 }
